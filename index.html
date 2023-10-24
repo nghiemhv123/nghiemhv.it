@@ -1,98 +1,1071 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <style>
-        body{
-    display: flex;
-    justify-content: center;
-    background-image: url(https://images.unsplash.com/photo-1553095066-5014bc7b7f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2FsbCUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D&w=1000&q=80);
-    background-position: center;
-    background-size: contain;
-    min-height: 100vh;
-    align-items: center;
-}
-.login{
-    width: 400px;
-    height: 380px;
-    border: 1px solid black;
-    border-radius: 30px;
-    padding: 30px;
-    text-align: center;
-    backdrop-filter: blur(10px);
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- cài đặt bootstrap  -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<!-- <link rel="stylesheet" href="./css/Laptop.css"> -->
+	<!-- gán link CSS dành cho tablet  -->
+	<!-- <link rel="stylesheet" href="./css/tablet.css"> -->
+	<link rel="stylesheet" href="./css/font.css">
+	<!-- gán link CSS dành cho mobile  -->
+	<!-- <link rel="stylesheet" href="./css/mobile.css"> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+	<title>Assignment 03</title>
+	<style>
+		
+		* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+        
+    }
+    body {
+       
+        margin-bottom: 100px;
+    }
+    /* sử dụng list-style để làm mất dấu chấm của thẻ li */
+    .bg-grey {
+        background: #f7f7f7;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    section > .container{
+        width: 1170px;
+        margin: auto;
+        display: block;
+        padding: 0px 50px;
+    }
+    nav.container {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .icon {
+      position: relative;
+      padding: 23px;
+      border-left: 1px solid  rgb(241, 238, 238);
+     
+    }
+    .icon a {
+        font-size: 11px;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #202020;
+        transition: all 0.3s;
+    }
+    #nav-bar {
+        text-align: center;
+    }
+    .icon i {
+        color: #199cdb;
+    }
+    .center-job {
+        font-size: 10px;        
+        padding: 10px;
+    }
+    /* sử dụng :nth-child() chọn vị trí phần tử theo thứ tự  */
+    .icon:nth-child(4) {
+        margin-left: 50px;
+        
+    }
+    /* sử dụng :nth-child() chọn vị trí phần tử theo thứ tự  */
+    .icon:nth-child(5) {
+        border-right: 1px solid  rgb(241, 238, 238);
+        
+    }
+    /* sử dụng :nth-child() chọn vị trí phần tử theo thứ tự  */
+    .icon:nth-child(2) {
+        margin-right: 50px;
+        border-right: 1px solid  rgb(241, 238, 238);
+    }
+    .center-job h1 {
+        font-size: 22px;
+    }
+    /* sử dụng position để di chuyển phần tử  */
+    .img-banner {
+        position: relative;  
+    }
+    /* sử dụng position để di chuyển phần tử */
+    .banner {
+        position: absolute; 
+        top: 30%;
+        left: 35%;
+        color: #f7f7f7;
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    /* sử dụng position để di chuyển phần tử */
+    .job1 {
+        font-size: 15px;
+        position: absolute;
+        left: 80px;
+    }
+    h3 {
+        font-size: 20px;
+        color: #08010f;
+    }
+    .job2 {
+        font-size: 12px;
+        color: grey;
+    }
+    /* .box-banner {
+       
+       margin-top: -25px;
+    } */
+    /* sử dụng CSS grid để chia 2 cột cân bằng nhau */
+    #cont-1 {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        height: 450px;
+        background: #e8ebea;
+    }
+    /* to màu nền cho "thông tin cá nhân"  */
+    #personal-info {
+       
+        background: #f0f0f0;
+    }
+    .mt-info , .target-content {      
+        color: grey;
+        font-size: 14px;
+    }
+    /* căn chỉnh dãn dòng các thẻ P trong thông tin cá nhân */
+    .mt-info {
+        line-height: 1.8;
+    }
+    /* sử dụng line-height để tạo khoảng cách giữa các dòng */
+    .target-content {
+        line-height: 1.6;
+    }
+    /* sử dụng margin-top , margin- left để căn chỉnh lề */
+    .section-2, .section-1 {
+        margin-left: 45px;
+        margin-top: 60px;
+       
+    }
+    .icon-footer {
+        margin-top: 15px;
+    }
+    .target {
+        background: #f5f5f5;
+    }
+
+    .date , .date-1 , .date-2{
+        color:gray;
+    }
+    /* sử dụng line-height để tạo khoảng cách giữa các dòng */
+    .date-job {
+        line-height: 1.6;
+        color: gray;
+        margin-right: 20px;
+    }
+    /* sử dụng padding:top, :left để căn chỉnh độ rộng của border */
+    /* background-color tô mầu nền cho border */
+    .date-1 {
+        border: 2px solid #199cdb;
+        border-radius: 30px;
+        padding-left: 10px;
+        padding-right: 10px;
+        background-color: #199cdb;
+        color: white;
+    }
+    /* sử dụng line-height để tạo khoảng cách giữa các dòng */
+    .date-job {
+        line-height: 1.6;
+        font-size: 14px;
+        margin-left: 22px;
+       
+    }
+    /* tạo màu cho dấu chấm thẻ li  */
+    strong {
+        color: #3e3a43;
+        font-size: 15px;
+    }
+    /* sử dụng border để tạo đường viền , width, height để tạo động dài rộng cho khung */
+    /* margin-left,right để căn chỉnh khoảng cách giữa các ô */
+    #kn-1 {
+        border: 2px solid rgb(241, 238, 238);
+        width: 250px;
+        height: 700px;             
+    }
+    /* sử dụng border để tạo đường viền , width, height để tạo động dài rộng cho khung */
+    /* margin-left,right để căn chỉnh khoảng cách giữa các ô */
+    #kn-2 {
+        border: 2px solid rgb(241, 238, 238);
+        width: 250px;
+        height: 700px;          
+    }
+    /* sử dụng border để tạo đường viền , width, height để tạo động dài rộng cho khung */
+    /* margin-left,right để căn chỉnh khoảng cách giữa các ô */
+    #kn-3 {
+        border: 2px solid rgb(241, 238, 238);
+        width: 250px;
+        height: 700px;   
+    } 
+    .ic-pencil , .ic-toolbox {
+        margin-left: 30px;
+        font-size: 33px;
+        color: gray;
+    }
+    #toolbox {
+        margin-left: 10px;
+        font-size: 33px;
+        color: gray;
+    }
+    .ic-telescope, .ic-mic, .ic-tools-2 {
+        margin-left: 60px;
+        font-size: 33px;
+        color: gray;
+    }   
+    /* sử dụng border để tạo đường viền , width, height để tạo động dài rộng cho khung */
+    /* margin-left,right để căn chỉnh khoảng cách giữa các ô */
+    #kn-4 {
+        border: 2px solid rgb(241, 238, 238);
+        width: 250px;  
+        height: 400px;            
+    }
+    .ic-megaphone, .ic-strategy, .ic-hotairballoon , .ic-basket {
+        margin: 5px;
+        border: 1px solid #199cdb;
+        border-radius: 50%;
+        padding: 15px;
+        font-size: 8px;
+    }
+    .an, .cg, .dl,  .na {
+        margin: 7px;
+        font-size: 10px;
+        color: gray;
+      }       
+    /* sử dụng border để tạo đường viền , width, height để tạo động dài rộng cho khung */
+    /* margin-left,right để căn chỉnh khoảng cách giữa các ô */
+    #kn-5 {
+        border: 2px solid rgb(241, 238, 238);
+        width: 250px;
+        height: 400px;
+        /* margin-left: 50px; */
+        
+    }
+    /* sử dụng border để tạo đường viền , width, height để tạo động dài rộng cho khung */
+    /* margin-left,right để căn chỉnh khoảng cách giữa các ô */
+    #kn-6 {
+        border: 2px solid rgb(241, 238, 238);
+        width: 250px;
+        height: 400px;
+        /* margin-left: 50px; */
+       
+    }
+    /* sử dụng position đẻ di chuyển gạch dưới của nội dung */
+    .ta,.ta2, .ta3{
+        display: inline-block;
+        margin-top: 40px;
+        position: relative;
+        font-size: 13px;
+    }
+    /* sử dụng phần tử giả để tạo gạch dưới cho nội dung */
+    .ta::before {
+        content:'';
+        position: absolute;
+        width: 75%;
+        height: 1.5px;
+        background-color: #199cdb;
+        bottom: -10px;
+    }
+    /* sử dụng phần tử giả để tạo gạch dưới cho nội dung */
+    .ta2::before {
+        content:'';
+        position: absolute;
+        width: 70%;
+        height: 1.5px;
+        background-color: #199cdb;
+        bottom: -10px;
+    }
+    /* sử dụng phần tử giả để tạo gạch dưới cho nội dung */
+    .ta3::before {
+        content:'';
+        position: absolute;
+        width: 35%;
+        height: 1.5px;
+        background-color: #199cdb;
+        bottom: -10px;
+    }
+    .ta4,.ta5, .ta6{
+        display: inline-block;
+        margin-top: 40px;
+        position: relative;
+        font-size: 13px;
+    }
+    /* sử dụng phần tử giả để tạo gạch dưới cho nội dung */
+    .ta4::before {
+        content:'';
+        position: absolute;
+        width: 75%;
+        height: 2.5px;
+        background-color: #199cdb;
+        bottom: -10px;
+    }
+    /* sử dụng phần tử giả để tạo gạch dưới cho nội dung */
+    .ta5::before {
+        content:'';
+        position: absolute;
+        width: 70%;
+        height: 2.5px;
+        background-color: #199cdb;
+        bottom: -10px;
+    }
+    /* sử dụng phần tử giả để tạo gạch dưới cho nội dung */
+    .ta6::before {
+        content:'';
+        position: absolute;
+        width: 35%;
+        height: 2.5px;
+        background-color: #199cdb;
+        bottom: -10px;
+    }   
+    /* sử dụng border tạo đường viền và border-radius tạo độ tròn*/       
+     .box-kn1 {
+        margin-top: 25px;
+     }      
+    /* sử dụng list-style-type: none;để xóa dấu chấm của thẻ li */
+      .box-kn2 {
+        display: flex;
+      }     
+    /* chỉnh chiều cao và chiều rộng của ảnh */
+    .my-image >img {
+        width: 250px;
+        height:150px;
+    }
+    .nd {
+        font-size: 14px;
+        margin-top: 10px;
+        line-height: 1.6;
+       
+    }
+    .nd-1 {
+        margin-bottom: 15px;
+    }
+    .nd-2 {
+        color: gray;
+    }
+    .str {
+        font-size: 12px;
+    }
+    #img-box:nth-child(3) {
+        padding-top: 30px;
+        border-top: 1.5px solid #d6c08d;
+    }  
+    #img-box:nth-child(2){
+        border-left: 1.5px solid #d6c08d;
+          
+    }
    
-}
-.login-box {
-    margin-top: -20px;
-}
-.box1{
-    text-align: center;
-    margin-bottom: 20px;
+    /* sử dụng grid tạo ra 3 ô bằng nhau  */
+    #duan {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-top: 30px;
+        width: 330px;
+        height:300px;
+    }
+    /* chỉnh chiều cao, rộng của ảnh có trong class:.my-image-1 */
+    .my-image-1>img {
+    
+        width: 100%;
+        height:300px;
+    
+    }
+    .my-image-2>img {
+    
+        width: 100%;
+        height:300px;
+    
+    }
+    .my-image-3>img {
+    
+        width: 100%;
+        height:300px;
+    
+    }
+    /* Thuộc tính border-collapse: collapse; trong CSS 
+    có tác dụng hợp nhất các đường viền của các ô bảng thành một đường viền duy nhất  */
+    table,tr,td {
+        color:grey;
+        font-size: 12px;      
+        border: 2px solid rgb(241, 238, 238);
+        border-collapse: collapse;
+        text-align: center;   
+                
+    }
+    td {
+        padding:20px 0px 20px 0px;
+        left: 10px;
+    }
+   
+      /* sử dụng border để tạo viền height chỉnh chiều cao , width chỉnh độ rộng khung */
+      #duan-1,#duan-2 ,#duan-3 {    
+        width: 350px;
+      }
+    /* // chia ra 3 ô bằng nhau */
+    .box-all {
+        border-left :2px solid rgb(241, 238, 238);
+        border-right :2px solid rgb(241, 238, 238);
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr; 
+        height: 50px;
+        font-size: 14px;
+    }
+    /* căn chỉnh lề bằng margin */
+    .box-cv {
+        border: 2px solid #199cdb;
+        border-radius: 30px;
+        width: 65px;
+        height: 30px;
+        background-color: #199cdb;
+        color: white;
+        text-align: center;
+        margin-top: 10px;
+        margin-left: 12px;
+    }
+    .box-cv p {
+        margin-top: 5px;
+    }
+    .funix {
+        margin-top: 17px;
+        margin-left: -15px;
+    }
+    .developer {
+        margin-top: 17px;
+        margin-left: -35px;
+    }
+    .icon-user-1 , .icon-lamp {
+        color: gray;
+    }         
+    .cvcn {
+       
+        border: 2px solid rgb(241, 238, 238);
+        width: 100%;
+        height: 70px;
+      
+    }
+    .cvcn h4 {
+        
+        font-size: 15px;
+        margin-left: 30px;
+        padding-top: 25px;
+        font-weight: bold;
+     
+    }
+    .mt {
+        margin-left: 12px;
+        margin-top: 8px;
+    }
+    
+    .mt-nd {
+        padding-left: 14px;
+        margin-top: 8px;
+    }
+    #the-end {
+        height: 80px;
+        margin-top: 40px;
+       
+      }
+      .ic-fb, .ic-lk , .ic-git {
+        display: flex;
+        margin-left: 50px;
+      }
+       /* sử dụng float để cho các phần tử nằm ngang */
+       /* sử dụng text-align: center; cho các phần tử vào trung tâm */
+    .icon-facebook-circled, .icon-linkedin-circled, .icon-github-circled{
+        color: #199cdb;
+        float: left;
+        text-align: center;
+        font-size: 25px;
+        margin-top: 25px;
+    }
+    .fb, .lk ,.git {
+        margin-top: 34px;
+        color:gray;
+        margin-left: 5px;
+        font-size: 15px;
+      }
+      ol, ul {
+        padding-left: 0;
+    }
+    ul {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+      }
 
+	  @media (min-width: 768px) and (max-width: 1024px) {
+    /* Quy tắc CSS dành cho tablet */
+     /* sử dụng display: none để ẩn phần tên  */
+    .center-job {
+        display: none;
+    }
+    .job1 {
+        font-size: 11px;
+        position: absolute;
+        left: 70px;
+    }
+    #cont-1 {
+        height: 490px;
+    }
+   
+    #kn-3 {
+        display: block;
+        margin-right: 45px;
+    }
+    #kn-4 {    
+        display: flex;   
+        height: 700px;
+        padding-left: 10px;
+        margin-right: 48px;
+    
+    }
+    #kn-6 {
+        display: block;
+        margin-right: 48px;
+    }
+    /* }Thuộc tính flex-direction: column; trong CSS có tác dụng đặt 
+    các phần tử linh hoạt (flex items) theo chiều dọc */
+    #img-box {
+        flex-direction: column;
+        gap: 30px;
+    }
+    #duan-1,#duan-2 ,#duan-3 {    
+        width: 200px;
+    }
+    .cvcn h4 {       
+        font-size: 10px;
+    }
+    .box-all {
+        font-size: 8px;
+    }
+    table,tr,td {
+        font-size: 8px;
+    }
+    .funix {
+        margin-top: 17px;
+        margin-left: 0px;
+    }
+    .developer {
+        margin-top: 15x;
+        margin-left: 0px;
+    }
+    .box-cv {            
+        width: 45px;
+        height: 25px;
+    }
+    #the-end {
+        height: 80px;
+        margin-top: 40px;
+        margin-left: -76px;
+    }
 }
-.box2 .mail{
-    height: 60px;
-    width: 100%;
-    border: none;
-    border-radius: 30px;
-    outline: none;
-    padding: 0px 25px;
-    margin-bottom: 15px;
-}
-.box3 .mail{
-    height: 60px;
-    width: 100%;
-    border: none;
-    border-radius: 30px;
-    padding: 0px 25px;
-    margin-bottom: 15px;
-}
-.box4{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 15px;
-}
-.box5 button{
-    height: 60px;
-    width: 40%;
-    border: none;
-    border-radius: 30px;
-    margin-bottom: 15px;
-}
-
-.cnn {
-    background-color: black;
-}
-.checkbox-2 {
-    margin-left: 10px;
-}
-    </style>
+@media (max-width: 768px) {
+    /* Quy tắc CSS dành cho mobile */
+    /* sử dụng display: none để ẩn phần tên  */
+    .center-job {
+        display: none;
+    }
+    .job1 {
+        font-size: 8px;
+        position: absolute;
+        left: 35px;
+    }
+    .banner h1 {
+        font-size: 20px;       
+        left: 50px;
+    }
+    .section-1 {
+        margin-left: 45px;
+        margin-top: 20px;
+    }
+    #nav-bar {
+        height: auto;
+        display: block;
+    }
+    nav.container {
+        display: block;
+        text-align: left;
+       
+    }
+    /* padding để căn lề phần tử  border-right: none; để ẩn viền phần tử */
+    .icon {
+        padding: 15px 40px 0 40px;
+        border-left: none;
+        border-right: none;
+    }
+    /* sử dụng :nth-child() để chọn thứ tự phần tử  border-right: none; để ẩn viền phần tử */
+    .icon:nth-child(2) {
+        border-right: none;
+    }
+    /* sử dụng :nth-child() để chọn thứ tự phần tử  border-right: none; để ẩn viền phần tử */
+    .icon:nth-child(5) {
+        border-right: none;
+    }
+  /* sử dụng :nth-child() để chọn thứ tự phần tử  border-right: none; để ẩn viền phần tử */
+    .icon:nth-child(4) {
+        margin-left: 0px;
+    }
+      #kn-1,  #kn-2, #kn-3, #kn-4, #kn-5, #kn-6 {
+        width: 100%;
+    }
+    #kn-2, #kn-3, #kn-5, #kn-6 {
+        margin-right: 50px;
+    }
+    #cont-1 {
+        margin-bottom: 100px;
+    }
+    .img-box {
+        width: 100%;
+    }
+    /* sử dụng :nth-child() để chọn thứ tự phần tử */
+    #img-box:nth-child(2) {
+        border-left: none;
+        border-bottom: 1.5px solid #d6c08d;;
+    }
+    #img-box:nth-child(3) {
+        border-top: none;
+    }
+    #img-box:nth-child(1) {
+        border-bottom: 1.5px solid #d6c08d;
+    }
+    #duan-1 , #duan-2 , #duan-3 {
+        width: 100%;
+    }
+    #the-end {
+        height: 80px;
+        margin-top: 40px;
+        margin-left: -76px;
+    }
+  }
+	</style>
 </head>
 <body>
-    <div class="login">
-        <div class="login-box">
-            <div class="box1">
-                <h1>Đăng Nhập</h1>
-            </div>
-            <div class="box2">
-                <input type="text" class="mail" placeholder="Email đăng nhập">
-            </div>
-            <div class="box3">
-                <input type="password" class="mail" placeholder="Password">
-            </div>
-            <div class="box4">
-                <input type="checkbox" class="checkbox-1">
-                <label class="checkbox-2" for="chk">Ghi nhớ đăng nhập</label>
-            </div>
-            <div class="box5">
-                <!-- <input type="submit" value="Đăng nhập" class="form-submit"> -->
-                <button class="w3-button w3-black">Đăng nhập</button>
-            </div>
+	<!-- Phần banner  -->
+	<section>
+		<div class="container">
+			
+			<!-- sử dụng thẻ img để tạo banner  -->
+			<div class="img-banner">
+				<img src="./images/banner.jpg" alt="banner" width="100%">
+				<div class="banner">
+					<h1>Nguyễn Văn A</h1>
+					<span class="job1">Full Stack Developer</span>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- phần NAV  -->
+	<section id="nav-bar">
+		<nav class="container">
+			<div class="icon" >
+				<i class="icon-user"></i>
+				<a href="#">thông tin</a>				
+			</div>
+			<div class="icon" >
+				<i class="icon-doc-text-inv"></i>
+				<a href="#2">Lý Lịch</a>				
+			</div>
+			<div class="center-job">
+				<h1>Nguyễn Văn A</h1>
+				<span>Full Stack Developer</span>
+			</div>
+			<div class="icon" >
+				<i class="icon-mail-alt"></i>
+				<a href="#3">Chứng Chỉ</a>				
+			</div>
+			<div class="icon" >
+				<i class="icon-star-1"></i>
+				<a href="#4">Dự án</a>				
+			</div>
+		</nav>
+	</section>
+ <!-- Phần thông tin cá nhân -mục tiêu nghề nghiệp  -->
+	<section id="about">
+		<div class="container">
+			<!-- sử dụng bootstrap row nằm trong class cha col nằm trong class con -->
+			<!-- d: display md là breakpoints dành cho máy tính bảng sm là cho điện thoại  -->
+			<div id="cont-1" class="row d-md-flex d-sm-block">
+				<div id="target" class="col-md-6">
+					<h1 class="section-1">Mục tiêu nghề nghiệp</h1>
+					<!-- sử dụng bootstrap ms: margin-left mt: margin-top -->
+					<p class="target-content ms-5 mt-2">
+						Là một sinh viên đã hoàn thành chương trình chứng chỉ Doanh
+						Nghiệp của FUNiX. Em mong muốn mình sẽ được làm việc với vị
+						trí Fullstack Developer, có thể vận dụng những kiến
+						thức đã được trau dồi và không ngừng học hỏi để phát triển
+						bản thân, cũng như hoàn thành tốt nhất công việc được giao.
+					</p>
+				</div>
+				<div id="personal-info" class=" col-md-6">
+					<h1 class="section-2">Thông tin cá nhân</h1>
+					<!-- sử dụng bootstrap ms: margin-left mt: margin-top -->
+					<div class="mt-info ms-5 mt-2">
+						<!-- sử dụng thẻ strong để in đậm chữ  -->
+						<p><strong>Giới tính</strong> : Nam</p>
+						<p><strong>Ngày sinh</strong> : 04/08/1992</p>
+						<p><strong>Điện thoại</strong> : (+84) 987178331</p>
+						<p><strong>Email</strong> : nghiemhvfx29753@funix.edu.vn
+						</p>
+						<p><strong>Địa chỉ</strong> : 31 ngõ 46 xuân đỉnh, TP Hà Nội</p>
+						<p><strong>Website</strong> : https://abc.tech</p>
+						<!-- sử dụng thư viện Font Awesome tạo biểu tượng icon  -->
+						<div class="icon-footer">
+							<i class="icon-twitter"></i>
+							<i class="icon-facebook"></i>
+							<i class="icon-gplus"></i>
+							<i class="icon-linkedin"></i>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Phần thông tin kinh nghiệm -học vấn -hoạt động-sở thích- ngôn ngữ- kỹ năng  -->
+	<section id="job-info">
+		<div class="container mb-5">
+			<!-- sử dụng bootstrap row nằm trong class cha col nằm trong class con -->
+			<!-- d: display md là breakpoints dành cho máy tính bảng sm là cho điện thoại  -->
+			<div class="row align-items-center justify-content-center">
+				<div id="kn-1" class="col-xxl-4 col-md-6" style="margin-top: 20px">
+					<!-- sử dụng bootstrap mt: margin-top ms: margin-left  -->
+					<div class="mt-1 ms-2" >
+						<!-- sử dụng thẻ <br> để xuống dòng -->
+						<h3>Kinh nghiệm <i id="toolbox" class="ic-toolbox"></i></h3><br>
+						<li><strong>Full Stack Developer - Công Ty Y</strong></li>
+						<div class="date-job">
+							<i class="date">05/2022 - </i>
+							<i class="date-1">hiện tại</i>
+							<p>- Xây dựng, phát triển Website dựa trên thiết
+								kế và yêu câu đã có.</p>
+							<p>- Phân tích và thiết kế Database, sử dụng
+								các hệ quản trị CSDL (MySQL, SQLServer,
+								NoSQL, ...) và viết được các câu truy vấn.</p>
+							<p>- Sử dụng ngôn ngữ server-side (Python,
+								ava, ...) đế xây dựng các Web Service</p>
+						</div>
+						<div class="date-job-2">
+							<li><strong>web Designer - Công ty X</strong></li>
+							<div class="date-job">
+								<i class="date-2">06/2021 - 04/2022</i>
+								<p>- Thiết kế Website dự trên yêu cầu của
+									khách hàng.</p>
+								<p>- Sử dụng các công cụ: Figma, Canva, PTS.</p>
+							</div>
+						</div>
+					</div>
+				</div>	
+				<!-- ms: margin-left  -->
+				<div id="kn-2" class="col-xxl-4 col-md-6 ms-5" style="margin-top: 20px">
+					<!-- sử dụng bootstrap mt: margin-top ms: margin-left  -->
+					<div id="box-1" class="mt-1 ms-2">
+						<h3>Học vấn <i class="ic-pencil"></i></h3><br>
+						<li><strong>FUNiX</strong></li>
+						<div class="date-job">
+							<i class="date">06/2021 -05/2022</i>
+							<p>- Tốt nghiệp chứng chỉ doanh nghiệp nhánh
+								Fulistack</p>
+							<p>-GPA: 9/10</p>
+						</div>
+						<div class="date-job-2">
+							<li><strong>Cử nhân - ĐH FPT</strong></li>
+							<div class="date-job">
+								<i class="date-2">08/2016 - 07/2019</i>
+								<p>- Chuyên ngành: Kỹ thuật phân mẽm</p>
+								<p>-GPA:32/4</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- ms: margin-left  -->
+				<div id="kn-3" class="col-xxl-4 col-md-6 ms-5" style="margin-top: 20px">
+					<!-- sử dụng bootstrap mt: margin-top ms: margin-left  -->
+					<div class="mt-1 ms-2" >
+						<h3>Hoạt động <i class="ic-toolbox"></i></h3><br>
+						<li><strong>FPT Edu Hackathon 2019</strong></li>
+						<div class="date-job">
+							<i class="date">03/2019- 05/2019</i>
+							<p>- Giải 3 băng A</p>
+							<p>- Đề tài: Trang web về phân loại rác thải.</p>
+						</div>
+						<div class="date-job-2">
+							<li><strong> Câu lạc bộ Z</strong></li>
+							<div class="date-job">
+								<i class="date-2">08/2016 - 08/2017</i>
+								<p>- Trưởng ban chuyên môn</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="kn-4" class="col-xxl-4 col-md-6 ms-0" style="margin-top: 20px">
+					<!-- sử dụng bootstrap mt: margin-top ms: margin-left  -->			
+					<div class="mt-1 ms-2">
+						<h3>Sở thích <i class="ic-telescope"></i></h3>
+						<div class="box-kn1">
+							<!-- sử dụng thư viện Font Awesome để tạo các phần tử icon  -->
+							<i class="ic-megaphone"></i>
+							<i class="ic-strategy"></i>
+							<i class="ic-hotairballoon"></i>
+							<i class="ic-basket"></i>
+	
+						</div>
+						<!-- tao các class trong thẻ p để căn chỉnh vị trí nội dung icon -->
+						<div class="box-kn2">
+							<p class="an">Âm nhạc</p>
+							<p class="cg">Chơi Game</p>
+							<p class="dl">Du lịch</p>
+							<p class="na">Nấu ăn</p>
+						</div>
+	
+					</div>
+				</div>
+				<div id="kn-5" class="col-xxl-4 col-md-6 ms-5" style="margin-top: 20px">
+					<!-- sử dụng bootstrap mt: margin-top ms: margin-left  -->
+					<div class="mt-1 ms-2">
+						<!-- sử dụng thư viện Font Awesome để tạo các phần tử icon  -->
+						<h3>Ngôn ngữ <i class="ic-mic"></i></h>
+						<p class="ta">Tiếng Anh</p>
+						<p class="ta2"> - IELTS 7.0</p><br>
+						<!-- sử dụng thẻ <br> để xuống dòng -->
+						<p class="ta3">Tiếng Nhật - JLPT N4</p>
+					</div>
+				</div>
+				<div id="kn-6" class="col-xxl-4 col-md-6 ms-5" style="margin-top: 20px">
+					<!-- sử dụng bootstrap mt: margin-top ms: margin-left  -->
+					<div class="mt-1 ms-2">
+						<!-- sử dụng thư viện Font Awesome để tạo các phần tử icon  -->
+						<h3>Kỹ năng <i class="ic-tools-2"></i></h3>
+						<!-- sử dụng thẻ <br> để xuống dòng -->
+						<p class="ta3">HTMUCSS: Fundamental</p><br>
+						<p class="ta">Javaseript:</p>
+						<p class="ta2"> Intermediate</p><br>
+						<p class="ta4">Node3S:</p>
+						<p class="ta5"> Intermediate</p><br>
+						<p class="ta6">Bootstrap 5: Fundamental</p><br>
+					</div>
+				</div>
+			</div>						
+		</div>
+	</section>
+	<!-- Phần chứng chỉ giải thưởng  -->
+	<section id="certificate" class="bg-grey">
+		<div class="container">
+			<h1 class="section-title">
+				Chứng chỉ - Giải thưởng
+			</h1>	
+			<!-- sử dụng bootstrap row nằm trong class cha col nằm trong class con -->		
+			<div class="row g-3 mt-4">				
+				<div id="img-box" class=" col-lg-6 col-md-6 d-lg-flex mb-4">
+					<!-- img-fluid  cho phép hình ảnh được hiển thị với kích thước đầy đủ mà không bị bóp méo -->
+					<div class="my-image img-fluid">
+						<img src="./images/Cert_DBI.png" alt="">
+					</div>
+					<div class="nd ms-3">
+						<p class="nd-1"><strong class="str">CHỨNG CHỈ LẬP TRÌNH WEB - FUNIX</strong></p>
+						<p class="nd-2">- Chứng chỉ thuộc chương trình CCDN</p>
+						<p class="nd-2">- GPA: 8.6</p>
+					</div>
+				</div>
+				<!-- img-fluid  cho phép hình ảnh được hiển thị với kích thước đầy đủ mà không bị bóp méo -->
+				<div id="img-box" class="col-lg-6 col-md-6 d-lg-flex ">
+					<div class="my-image img-fluid">
+						<img src="./images/Cert_PRF.png" alt="">
 
-        </div>
-    </div>
+					</div>
+					<div class="nd ms-3">
+						<span class="nd-1"><strong class="str">CHỨNG CHỈ LẬP TRÌNH JAVASCRIPT - FUNIX</strong></span>
+						<p class="nd-2">- Chứng chỉ thuộc chương trình CCDN</p>
+						<p class="nd-2">- GPA: 8.9</p>
+					</div>
+				</div>	
+				<!-- img-fluid  cho phép hình ảnh được hiển thị với kích thước đầy đủ mà không bị bóp méo									 -->
+				<div id="img-box" class="col-lg-12 d-lg-flex">
+					<div class="my-image img-fluid">
+						<img src="./images/Cert_WEB.png" alt="">
+					</div>
+					<div class="nd ms-3">
+						<p class="nd-1"><strong class="str">CHỨNG CHỈ THIẾT KẾ DATABASE - FUNIX</strong></p>
+						<p class="nd-2">- Chứng chỉ thuộc chương trình CCDN</p>
+						<p class="nd-2">- GPA: 8.0</p>
+					</div>
+				</div>	
+						
+			</div>
+		</div>
+	</section>
+	<!-- Phần Dự án  -->
+	<section id="project">
+		<div class="container">
+			<h1 class="section-title">
+				Dự án
+			</h1>
+			<!-- sử dụng bootstrap row nằm trong class cha col nằm trong class con -->
+			<div class="row gap-3 d-lg-flex">
+				<div id="duan-1" class="col-md-4">
+						<!-- thêm hình ảnh băng img và tạo các thẻ div để CSS các ô bằng grid -->
+					<div class="my-image-1">
+						<img src="./images/project_1.png" alt="DA">
+						<div class="cvcn">
+							<h4>CV CÁ NHÂN</h4>
+						</div>	
+						<div class="box-all">
+							<div class="box-cv">
+								<p>2021</p>
+							</div>
+								<!-- sử dụng thư viện Font Awesome để tạo các phần tử icon  -->
+							<div class="funix">
+								<p class="icon-user-1">FUNIX</p>
+
+							</div>
+							<div class="developer">
+								<P class="icon-lamp">Developer</P>
+
+							</div>
+						</div>
+						<!-- sử dụng thẻ table , tr, td để tạo ô  -->
+						<table>
+							<tr>
+								<td>Mô tả</td>
+								<td>Trang Web CV cá nhân online.Gồm các 
+									thông tin cá nhân cũng như khả năng 
+									nghề nghiệp</td>
+							</tr>
+							<tr>
+								<td>Nhiệm vụ</td>
+								<td>- Phát triển code - Review code
+									- Tối ưu code - Xử lý lỗi</td>
+							</tr>
+							<tr>
+								<td>Công nghệ</td>
+								<td>- HTML, CSS</td>
+							</tr>
+						</table>
+					
+					</div>
+
+				</div>
+				<!-- thêm hình ảnh băng img và tạo các thẻ div để CSS các ô bằng grid -->
+				<div id="duan-2" class="col-md-4">
+					<div class="my-image-2">
+						<img src="./images/project_2.png" alt="DA">
+						<div class="cvcn">
+							<h4>TRANG WEB QUẢN LÝ THÚ CƯNG</h4>
+						</div>	
+						<div class="box-all">
+							<div class="box-cv">
+								<p>2021</p>
+							</div>
+							<!-- sử dụng thư viện Font Awesome để tạo các phần tử icon  -->
+							<div class="funix">
+								<p class="icon-user-1">FUNIX</p>
+
+							</div>
+							<div class="developer">
+								<P class="icon-lamp">Developer</P>
+
+							</div>
+						</div>
+						<!-- sử dụng thẻ table , tr, td để tạo ô  -->
+						<table>
+							<tr>
+								<td>Mô tả</td>
+								<td>Ứng dụng giúp quản lý các thông tin của 
+									thú cưng như: Cân nặng, giống, tình trạng
+									tiêm chủng,...Bao gồm các chức năng thêm/sửa/xóa.</td>
+							</tr>
+							<tr>
+								<td>Nhiệm vụ</td>
+								<td>- Phát triển code - Review code
+									- Tối ưu code - Xử lý lỗi</td>
+							</tr>
+							<tr>
+								<td>Công nghệ</td>
+								<td>- HTML, CSS, Javascript</td>
+							</tr>
+						</table>
+						
+					</div>
+					
+				</div>
+				<!-- thêm hình ảnh băng img và tạo các thẻ div để CSS các ô bằng grid -->
+				<div id="duan-3" class="col-md-4">
+					<div class="my-image-3">
+						<img src="./images/project_3.png" alt="DA">
+						<div class="cvcn">
+							<h4>TRANG WEB TIN TỨC</h4>
+						</div>	
+						<div class="box-all">
+							<div class="box-cv">
+								<p>2021</p>
+							</div>
+								<!-- sử dụng thư viện Font Awesome để tạo các phần tử icon  -->
+							<div class="funix">
+								<p class="icon-user-1">FUNIX</p>
+
+							</div>
+							<div class="developer">
+								<P class="icon-lamp">Developer</P>
+
+							</div>
+						</div>
+						<!-- sử dụng thẻ table , tr, td để tạo ô  -->
+						<table>
+							<tr>
+								<td>Mô tả</td>
+								<td>Trang Web xem tin tức từ nhiều nguồn
+									khác nhau, người dùng có thế tìm kiếm
+									các tin tức dựa theo các từ khóa.</td>
+							</tr>
+							<tr>
+								<td>Nhiệm vụ</td>
+								<td>- Phát triển code - Review code
+									- Tối ưu code - Xử lý lỗi</td>
+							</tr>
+							<tr>
+								<td>Công nghệ</td>
+								<td>- HTML, CSS, Javascript</td>
+							</tr>
+						</table>
+						
+					</div>
+
+				</div>
+			</div>
+		</div>
+		
+	</section>
+
+	<section id="footer">
+		<div id="the-end">
+			<!-- sử dụng thư viện Font Awesome để tạo các phần tử icon  -->
+			<ul>
+				<div class="ic-fb">
+					<i class="icon-facebook-circled"></i>
+					<li class="fb">Facebook</li>
+
+				</div>
+				<div class="ic-lk">
+					<i class="icon-linkedin-circled"></i>
+					<li class="lk">Linkedin</li>
+
+				</div>
+				<div class="ic-git">
+					<i class="icon-github-circled"></i>
+					<li class="git">Github</li>
+
+				</div>
+			</ul>
+		</div>
+	</section>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 </body>
 </html>
